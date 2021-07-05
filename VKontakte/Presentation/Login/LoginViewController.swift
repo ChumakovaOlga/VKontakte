@@ -1,14 +1,12 @@
-//
+
 //  LoginViewController.swift
 //  VKontakte
-//
 //  Created by Olga Chumakova on 04.07.2021.
-//
+
 
 import UIKit
 
 final class LoginViewController: UIViewController {
-    
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var titleImageView: NSLayoutConstraint!
@@ -43,12 +41,8 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
-    
     @IBAction private func loginButtonPressed(_ sender: UIButton) {
- //       получаем текст логина
-       
-        
+ //       Получаем текст логина
         guard
             let login = loginTextField.text,
             let password = passwordTextField.text
