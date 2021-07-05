@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		CF7B5AB72691C28E00B63D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7B5AB62691C28E00B63D6B /* AppDelegate.swift */; };
 		CF7B5AB92691C28E00B63D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7B5AB82691C28E00B63D6B /* SceneDelegate.swift */; };
-		CF7B5ABB2691C28E00B63D6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7B5ABA2691C28E00B63D6B /* ViewController.swift */; };
 		CF7B5ABE2691C28E00B63D6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7B5ABC2691C28E00B63D6B /* Main.storyboard */; };
 		CF7B5AC02691C29100B63D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7B5ABF2691C29100B63D6B /* Assets.xcassets */; };
 		CF7B5AC32691C29100B63D6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7B5AC12691C29100B63D6B /* LaunchScreen.storyboard */; };
+		CF7B5AD22691D90B00B63D6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7B5AD12691D90B00B63D6B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF7B5AB32691C28E00B63D6B /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7B5AB62691C28E00B63D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7B5AB82691C28E00B63D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF7B5ABA2691C28E00B63D6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF7B5ABD2691C28E00B63D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF7B5ABF2691C29100B63D6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF7B5AC22691C29100B63D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF7B5AC42691C29100B63D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF7B5AD12691D90B00B63D6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,55 @@
 		CF7B5AB52691C28E00B63D6B /* VKontakte */ = {
 			isa = PBXGroup;
 			children = (
-				CF7B5AB62691C28E00B63D6B /* AppDelegate.swift */,
-				CF7B5AB82691C28E00B63D6B /* SceneDelegate.swift */,
-				CF7B5ABA2691C28E00B63D6B /* ViewController.swift */,
+				CF7B5ACA2691D18500B63D6B /* AppDelegate */,
 				CF7B5ABC2691C28E00B63D6B /* Main.storyboard */,
-				CF7B5ABF2691C29100B63D6B /* Assets.xcassets */,
-				CF7B5AC12691C29100B63D6B /* LaunchScreen.storyboard */,
-				CF7B5AC42691C29100B63D6B /* Info.plist */,
+				CF7B5ACF2691D77800B63D6B /* Presentation */,
+				CF7B5ACB2691D21A00B63D6B /* Resourses */,
+				CF7B5ACD2691D34A00B63D6B /* Configuration */,
 			);
 			path = VKontakte;
+			sourceTree = "<group>";
+		};
+		CF7B5ACA2691D18500B63D6B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CF7B5AB62691C28E00B63D6B /* AppDelegate.swift */,
+				CF7B5AB82691C28E00B63D6B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CF7B5ACB2691D21A00B63D6B /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CF7B5AC12691C29100B63D6B /* LaunchScreen.storyboard */,
+				CF7B5ABF2691C29100B63D6B /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		CF7B5ACD2691D34A00B63D6B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CF7B5AC42691C29100B63D6B /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CF7B5ACF2691D77800B63D6B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CF7B5AD02691D83300B63D6B /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CF7B5AD02691D83300B63D6B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CF7B5AD12691D90B00B63D6B /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7B5ABB2691C28E00B63D6B /* ViewController.swift in Sources */,
+				CF7B5AD22691D90B00B63D6B /* LoginViewController.swift in Sources */,
 				CF7B5AB72691C28E00B63D6B /* AppDelegate.swift in Sources */,
 				CF7B5AB92691C28E00B63D6B /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2M3J9J6V;
-				INFOPLIST_FILE = VKontakte/Info.plist;
+				INFOPLIST_FILE = VKontakte/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2M3J9J6V;
-				INFOPLIST_FILE = VKontakte/Info.plist;
+				INFOPLIST_FILE = VKontakte/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
