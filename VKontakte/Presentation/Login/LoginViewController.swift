@@ -1,14 +1,12 @@
-//
+
 //  LoginViewController.swift
 //  VKontakte
-//
 //  Created by Olga Chumakova on 04.07.2021.
-//
+
 
 import UIKit
 
 final class LoginViewController: UIViewController {
-    
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var titleImageView: NSLayoutConstraint!
@@ -43,26 +41,40 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+           if identifier == "moveToMain" {
+            //Получаем текст логина
+            guard
+                let login = loginTextField.text,
+                let password = passwordTextField.text
+            else {
+                print("Login or password are equal nil")
+                showErrorAlert(message: "nothing is written")
+                return false //если текстовые поля будут пустые, вернем false
+            }
+            
+            //Проверяем, верны ли они
+            if login == "1" && password == "1" {
+                print("authorization succeeded")
+                return true
+            } else {
+                showErrorAlert(message: "empty fields or wrong login or password ")
+                print("authorization failed")
+                return false
+            }
+        }
+        showErrorAlert(message: "wrong segue identifier")
+        return false
+    }
     
     @IBAction private func loginButtonPressed(_ sender: UIButton) {
- //       получаем текст логина
-       
-        
-        guard
-            let login = loginTextField.text,
-            let password = passwordTextField.text
-        else {
-            print("Login or password equal nil")
-            return
-        }
-        
-        //Проверяем, верны ли они
-        if login == "1" && password == "1" {
-            print("authorization susceeded")
-        } else {
-            print("authorization failed")
-        }
+        print("loginButtonPressed")
     }
     //Когда клавиатура появляется
     
@@ -99,5 +111,21 @@ final class LoginViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    //создание alert
+    private func showErrorAlert(message: String) {
+        
+        let alert = UIAlertController(title: "Error",
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .cancel) {_ in
+            self.loginTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }
