@@ -1,9 +1,9 @@
-//
+
 //  FavouriteGroupViewController.swift
 //  VKontakte
-//
+
 //  Created by Olga Chumakova on 08.07.2021.
-//
+
 
 import UIKit
 
